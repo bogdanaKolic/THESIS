@@ -1,0 +1,80 @@
+# Used as resources:
+#	https://bitbucket.org/icl/papi/wiki/PAPI-Overview.md
+#	Makefiles from src/ctests directory
+
+LIBPAPI = ../../src/libpapi.a
+TESTS = add_native timer_interrupt total_count_benchmark timer_stop_interrupt timer_thread timer_thread_sigblock total_count_overflow_benchmark sampling_overflow attack_sampled attack_benchmark no_flushing_sampled no_flushing_benchmark random_sampled random_benchmark rowhammer_test_sampled rowhammer_test_benchmark double_sided_rowhammer_sampled double_sided_rowhammer_benchmark attack_memset_sampled attack_memset_benchmark attack_ntmp_sampled attack_ntmp_benchmark
+
+all : $(TESTS)
+
+handle_error.o : handle_error.c
+	gcc -g -I. -c handle_error.c
+
+add_native : add_native.c handle_error.o
+	gcc -g -I. $^ $(LIBPAPI) -o $@
+
+timer_interrupt : timer_interrupt.c handle_error.o
+	gcc -g -I. $^ $(LIBPAPI) -o $@
+
+total_count_benchmark : total_count_benchmark.c handle_error.o
+	gcc -g -I. $^ $(LIBPAPI) -o $@
+
+total_count_overflow_benchmark : total_count_overflow_benchmark.c handle_error.o
+	gcc -g -I. $^ $(LIBPAPI) -o $@
+
+timer_stop_interrupt : timer_stop_interrupt.c handle_error.o
+	gcc -g -I. $^ $(LIBPAPI) -o $@
+
+timer_thread : timer_thread.c handle_error.o
+	gcc -g -lpthread -I. $^ $(LIBPAPI) -o $@
+
+timer_thread_sigblock : timer_thread_sigblock.c handle_error.o
+	gcc -g -lpthread -I. $^ $(LIBPAPI) -o $@
+
+sampling_overflow : sampling_overflow.c handle_error.o
+	gcc -g -I. $^ $(LIBPAPI) -o $@
+
+attack_sampled : attack_sampled.c handle_error.o
+	gcc -g -lpthread -I. $^ $(LIBPAPI) -o $@
+
+attack_memset_sampled : attack_memset_sampled.c handle_error.o
+	gcc -g -lpthread -I. $^ $(LIBPAPI) -o $@
+
+attack_ntmp_sampled : attack_ntmp_sampled.c handle_error.o
+	gcc -g -lpthread -I. $^ $(LIBPAPI) -o $@
+
+no_flushing_sampled : no_flushing_sampled.c handle_error.o
+	gcc -g -lpthread -I. $^ $(LIBPAPI) -o $@
+
+random_sampled : random_sampled.c handle_error.o
+	gcc -g -lpthread -I. $^ $(LIBPAPI) -o $@
+
+rowhammer_test_sampled: rowhammer_test_sampled.cc handle_error.o
+	g++ -g -O2 -lpthread -I. rowhammer_test_sampled.cc $(LIBPAPI) -o rowhammer_test_sampled
+
+double_sided_rowhammer_sampled: double_sided_rowhammer_sampled.cc handle_error.o
+	g++ -g -O2 -std=c++11 -lpthread -I. double_sided_rowhammer_sampled.cc $(LIBPAPI) -o double_sided_rowhammer_sampled
+
+attack_benchmark : attack_benchmark.c handle_error.o
+	gcc -g -I. $^ $(LIBPAPI) -o $@
+
+attack_memset_benchmark : attack_memset_benchmark.c handle_error.o
+	gcc -g -I. $^ $(LIBPAPI) -o $@
+
+attack_ntmp_benchmark : attack_ntmp_benchmark.c handle_error.o
+	gcc -g -I. $^ $(LIBPAPI) -o $@
+
+no_flushing_benchmark : no_flushing_benchmark.c handle_error.o
+	gcc -g -I. $^ $(LIBPAPI) -o $@
+
+random_benchmark : random_benchmark.c handle_error.o
+	gcc -g -I. $^ $(LIBPAPI) -o $@
+
+rowhammer_test_benchmark: rowhammer_test_benchmark.cc handle_error.o
+	g++ -g -O2 -I. rowhammer_test_benchmark.cc $(LIBPAPI) -o rowhammer_test_benchmark
+
+double_sided_rowhammer_benchmark: double_sided_rowhammer_benchmark.cc handle_error.o
+	g++ -g -O2 -std=c++11 -I. double_sided_rowhammer_benchmark.cc $(LIBPAPI) -o double_sided_rowhammer_benchmark
+
+clean :
+	rm $(TESTS) handle_error.o

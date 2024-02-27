@@ -1,0 +1,37 @@
+https://hpc.llnl.gov/software/development-environment-software/papi-performance-application-programming-interface
+
+Official page: 
+https://icl.utk.edu/papi/
+
+Wiki page:
+https://bitbucket.org/icl/papi/wiki/Home
+
+Papi github repo:
+https://github.com/icl-utk-edu/papi
+
+PAPI USER GUIDE:
+https://icl.utk.edu/projects/papi/files/documentation/PAPI_USER_GUIDE.htm
+
+PAPI mailing list:
+https://groups.google.com/a/icl.utk.edu/g/ptools-perfapi/c/FNvY4XLFPvk
+
+https://ptools-perfapi.eecs.utk.narkive.com/wODAh3Bu/papi-minimum-sampling-frequency
+https://www4.cs.fau.de/Lehre/WS01/V_AKBPES2/Skript/papi.pdf
+https://www.researchgate.net/publication/244437745_PAPI_A_Portable_Interface_to_Hardware_Performance_Counters
+https://en.algorithmica.org/hpc/profiling/events/
+https://www.lrz.de/services/software/programmierung/papi/PAPI_Prog_Ref_36.pdf
+
+Code snippets and manuals:
+https://stackoverflow.com/questions/47287644/profiling-cache-misses-for-separate-pthread-using-papi
+https://stackoverflow.com/questions/16037146/timer-interrupt-in-c
+https://www.gnu.org/software/libc/manual/html_node/Signal-Sets.html
+https://www.gnu.org/software/libc/manual/html_node/Setting-an-Alarm.html
+
+Periodic timer overcount:
+https://icl.utk.edu/files/publications/2010/icl-utk-451-2010.pdf
+
+PAPI sampling:
+https://web.eece.maine.edu/~vweaver/projects/perf_events/sampling/pebs_ibs_sampling.pdf
+https://www.vi-hps.org/cms/upload/program/espt-sc18/espt_2018_francis-mezger_papi.pdf
+file:///home/bogdana/Downloads/978-3-030-17872-7.pdf (page 144, 155/292)
+https://linux.die.net/man/3/papi_overflow
