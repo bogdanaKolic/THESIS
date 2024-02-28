@@ -6,7 +6,7 @@ set style line 3 lt 3 lw 3 pt 7 ps 2 lc 'purple'
 set style line 4 lt 1 lw 3 pt 7 ps 2 lc 'magenta'
 set style line 5 lt 1 lw 3 pt 7 ps 2 lc 'green'
 set style line 6 lt 2 lw 1 pt 7 ps 1 lc 'turquoise'
-set style line 7 lt 1 lw 1 pt 7 ps 1 lc 'pink'
+set style line 7 lt 1 lw 3 pt 7 ps 2 lc 'pink'
 set style data linespoints
 
 set xlabel 'time (sec)'
@@ -55,23 +55,22 @@ plot 'attack.dat' using 2:6:1 lc variable title 'attack', 'attack_memset.dat' us
 'rh.dat' using 2:6:1 lc variable title 'project-zero attack'
 
 **********************************************************************************************************************************
-set xrange [0.15:0.25]
+set xrange [0:0.3]
 set output 'llc_misses.png'
 set title 'L3 CACHE (LLC) MISSES with LOAD- 1ms intervals'
 
 plot 'attack.dat' using 2:3:1 lc variable title 'attack', 'no_flushing.dat' using 2:3:1 lc variable title 'no clflush (no attack)',\
-'attack_ntmp.dat' using 2:3:1 lc variable title 'attack non-temporal stores', 'random.dat' using 2:3:1 lc variable title 'random accesses (no attack)',\
-'rh.dat' using 2:3:1 lc variable title 'project-zero attack'
+'double_sided.dat' using 2:3:1 lc variable title 'double-sided attack', 'rh.dat' using 2:3:1 lc variable title 'project-zero attack'
 
 **********************************************************************************************************************************
-set xrange [0.5:1]
+set xrange [0:2]
 set output 'l2_hits.png'
 set title 'L2 CACHE HITS with LOAD - 1ms intervals'
 
 plot 'attack.dat' using 2:4:1 lc variable title 'attack', 'random.dat' using 2:4:1 lc variable title 'random accesses (no attack)'
 
 **********************************************************************************************************************************
-set xrange [0.05:0.5]
+set xrange [0:1]
 set output 'l2_hits_pr_zero.png'
 set title 'L2 CACHE HITS with LOAD - 1ms intervals'
 
@@ -82,13 +81,7 @@ set xrange [0.15:0.5]
 set output 'stalled_cycles.png'
 set title 'STALLED CYCLES with LOAD - 1ms intervals'
 
-plot 'random.dat' using 2:6:1 lc variable title 'random accesses (no attack)',\
-'no_flushing.dat' using 2:6:1 lc variable title 'no clflush (no attack)', 'rh.dat' using 2:6:1 lc variable title 'project-zero attack'
+plot 'double_sided.dat' using 2:6:1 lc variable title 'double-sided attack',\
+'random.dat' using 2:6:1 lc variable title 'random accesses (no attack)',\
+'rh.dat' using 2:6:1 lc variable title 'project-zero attack'
 
-**********************************************************************************************************************************
-set xrange [0.5:1]
-set output 'l1d_hits.png'
-set title 'L1 DATA CACHE HITS with LOAD - 1ms intervals'
-
-plot 'double_sided.dat' using 2:5:1 lc variable title 'double-sided attack',\
-'no_flushing.dat' using 2:5:1 lc variable title 'no clflush (no attack)', 'random.dat' using 2:5:1 lc variable title 'random accesses (no attack)'
