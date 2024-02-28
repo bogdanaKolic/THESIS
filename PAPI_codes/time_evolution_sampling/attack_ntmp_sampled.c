@@ -57,7 +57,7 @@ struct timeval interval;
 struct itimerval period;
 
 #ifndef FILENAME
-#define FILENAME "attack_ntmp_sampled.dat"
+#define FILENAME "attack_ntmp_load.dat"
 #endif // FILENAME
 
 struct timeval start_time_;

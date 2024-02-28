@@ -65,7 +65,7 @@ struct timeval interval;
 struct itimerval period;
 
 #ifndef FILENAME
-#define FILENAME "rh_sampled.dat"
+#define FILENAME "rh_load.dat"
 #endif // FILENAME
 
 struct timeval start_time_;

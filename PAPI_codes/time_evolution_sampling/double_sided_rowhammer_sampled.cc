@@ -67,7 +67,7 @@ long_long values[4];
 FILE *f;
 
 #ifndef FILENAME
-#define FILENAME "double_sided_sampled.dat"
+#define FILENAME "double_sided_load.dat"
 #endif // FILENAME
 
 struct timeval start_time_;

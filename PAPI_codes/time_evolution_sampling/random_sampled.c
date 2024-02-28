@@ -58,7 +58,7 @@ struct timeval interval;
 struct itimerval period;
 
 #ifndef FILENAME
-#define FILENAME "random_sampled.dat"
+#define FILENAME "random_load.dat"
 #endif // FILENAME
 
 struct timeval start_time_;

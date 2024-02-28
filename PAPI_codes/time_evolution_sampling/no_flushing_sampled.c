@@ -58,7 +58,7 @@ struct timeval interval;
 struct itimerval period;
 
 #ifndef FILENAME
-#define FILENAME "no_flushing_sampled.dat"
+#define FILENAME "no_flushing_load.dat"
 #endif // FILENAME
 
 struct timeval start_time_;

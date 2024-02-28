@@ -26,6 +26,7 @@
 
 
 #define INSTR "INST_RETIRED:ANY"
+#define INSTR_LENOVO "INST_RETIRED:ANY_P"
 #define MEMINSTR "MEM_INST_RETIRED:ANY"
 #define L1DRA "PERF_COUNT_HW_CACHE_L1D:READ:ACCESS"
 
@@ -106,7 +107,7 @@ int main()
     }
     
     /* Find the code for the native event */
-    retval = PAPI_event_name_to_code(INSTR, &native);
+    retval = PAPI_event_name_to_code(INSTR_LENOVO, &native);
     if (retval != PAPI_OK){
         printf("event error");
         handle_error(retval);
