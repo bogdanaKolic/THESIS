@@ -30,11 +30,8 @@ namespace {
 // The fraction of physical memory that should be mapped for testing.
 double fraction_of_physical_memory = 0.3;
 
-// The time to hammer before aborting. Defaults to one minute.
-uint64_t number_of_seconds_to_hammer = 60;
-
 // The number of memory reads to try.
-uint64_t number_of_reads = 1000*1024;
+uint64_t number_of_reads = 10000*1024;
 
 // Obtain the size of the physical memory of the system.
 uint64_t GetPhysicalMemorySize() {
@@ -150,6 +147,7 @@ uint64_t HammerAllReachablePages(uint64_t presumed_row_size,
             reinterpret_cast<uint64_t>(second_row_page),
             reinterpret_cast<uint64_t>(second_row_page+0x1000));
         hammer(first_page_range, second_page_range, number_of_reads);
+        exit(0);
       }
     }
   }
@@ -165,17 +163,9 @@ void HammerAllReachableRows(HammerFunction* hammer, uint64_t number_of_reads) {
                           hammer, number_of_reads);
 }
 
-void HammeredEnough(int sig) {
-  fflush(stdout);
-  fflush(stderr);
-  exit(0);
-}
-
 }  // namespace
 
 int main(int argc, char** argv) {
 
-  signal(SIGALRM, HammeredEnough);
-  alarm(number_of_seconds_to_hammer);
   HammerAllReachableRows(&HammerAddressesStandard, number_of_reads);
 }

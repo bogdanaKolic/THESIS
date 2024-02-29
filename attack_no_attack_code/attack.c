@@ -5,7 +5,7 @@
 
 #define BUFFER_SIZE (1 << 18)
 #define BUFFER_SIZE_MASK (BUFFER_SIZE - 1)
-#define RH_THRESHOLD (10000)
+#define RH_THRESHOLD (60000)
 #define LF "\n"
 
 #define FLUSH(addr) asm volatile("CLFLUSH (%[a])"::[a] "r" (addr):)

@@ -12,7 +12,7 @@
 #include <unistd.h>
 
 const size_t mem_size = 1 << 30;
-const int toggles = 1080000;
+const int toggles = 4000000;
 
 char *g_mem;
 
@@ -53,8 +53,8 @@ static void toggle(int iterations, int addr_count) {
   memset(g_mem, 0xff, mem_size);
 
   int iter = 0;
-  for (int i=0; i<10; i++) {
-    toggle(10, 4); //iterations, addr_count
+  for (int i=0; i<2; i++) {
+    toggle(2, 4); //iterations, addr_count
   }
 }
 
