@@ -107,7 +107,7 @@ int main()
     }
     
     /* Find the code for the native event */
-    retval = PAPI_event_name_to_code(INSTR_LENOVO, &native);
+    retval = PAPI_event_name_to_code(INSTR, &native);
     if (retval != PAPI_OK){
         printf("event error");
         handle_error(retval);
