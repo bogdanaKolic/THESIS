@@ -29,4 +29,4 @@ for f in files:
                 for fn in range(7):
                     if f == files[fn]:
                         outfile.write(f'{fn+1} ')
-                outfile.write(f'{line[0]} {line[1][0]} {line[1][1]} [line[1][2] {line [1][3]}\n')
+                outfile.write(f'{line[0]} {line[1][0]} {line[1][1]} {line[1][2]} {line [1][3]}\n')
