@@ -68,7 +68,7 @@ void *thread_func(void * args){
     /* Get the new thread id */
     long unsigned tid;
     tid = syscall(SYS_gettid);
-    
+    printf("new thread: %lld\n", tid);
 
     /* Block the signal handling in this thread */
     pthread_sigmask(SIG_BLOCK, &block, NULL);
@@ -95,7 +95,9 @@ void *thread_func(void * args){
     }
 
     /* INSERT THE PROGRAM HERE */ 
-    
+    while(1){
+
+    }
     
 
     /* Stop all counters */
@@ -201,6 +203,10 @@ void timer_handler(int sig){
     /* Measure the time taken */
     double diff = get_diff();
 
+    long unsigned tid;
+    tid = syscall(SYS_gettid);
+    printf("handler thread: %lld\n", tid);
+
    /* Read all counters */
     if (PAPI_read(EventSet, values) != PAPI_OK){
         printf("read error\n");
@@ -217,16 +223,22 @@ void timer_handler(int sig){
 int main()
 {
 
+    long unsigned tid;
+    tid = syscall(SYS_gettid);
+    printf("main thread: %lld\n", tid);
+
     /* Create a new thread */
     pthread_t my_thread;
     pthread_attr_t attr;
     pthread_attr_init( &attr );
     pthread_create( &my_thread, &attr, &thread_func, NULL);
     
-
+    while(1){
+        // do something
+    }
     /* Stop all counters */
-    if (PAPI_stop(EventSet, values) != PAPI_OK)
-        handle_error(1);
+     if (PAPI_stop(EventSet, values) != PAPI_OK)
+       handle_error(1);
     
 
     /* Exit successfully */
