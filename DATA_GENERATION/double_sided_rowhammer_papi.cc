@@ -72,9 +72,9 @@ FILE *f;
 
 #ifndef LOAD
 #define LOAD 0
-#define FILENAME "double_sided_" + LAPTOP + ".csv"
+#define FILENAME "double_sided_" LAPTOP ".csv"
 #else
-#define FILENAME "double_sided_load_" + LAPTOP + ".csv"
+#define FILENAME "double_sided_load_" LAPTOP ".csv"
 #endif //LOAD
 
 struct timeval start_time_;

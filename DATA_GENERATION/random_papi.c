@@ -63,9 +63,9 @@ struct itimerval period;
 
 #ifndef LOAD
 #define LOAD 0
-#define FILENAME "random_" + LAPTOP + ".csv"
+#define FILENAME "random_" LAPTOP ".csv"
 #else
-#define FILENAME "random_load_" + LAPTOP + ".csv"
+#define FILENAME "random_load_" LAPTOP ".csv"
 #endif //LOAD
 
 struct timeval start_time_;

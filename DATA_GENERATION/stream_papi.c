@@ -212,9 +212,9 @@ struct itimerval period;
 
 #ifndef LOAD
 #define LOAD 0
-#define FILENAME "stream_" + LAPTOP + ".csv"
+#define FILENAME "stream_" LAPTOP ".csv"
 #else
-#define FILENAME "stream_load_" + LAPTOP + ".csv"
+#define FILENAME "stream_load_" LAPTOP ".csv"
 #endif //LOAD
 
 struct timeval start_time_;

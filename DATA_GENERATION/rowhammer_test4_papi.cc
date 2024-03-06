@@ -70,9 +70,9 @@ struct itimerval period;
 
 #ifndef LOAD
 #define LOAD 0
-#define FILENAME "rh4_" + LAPTOP + ".csv"
+#define FILENAME "rh4_" LAPTOP ".csv"
 #else
-#define FILENAME "rh4_load_" + LAPTOP + ".csv"
+#define FILENAME "rh4_load_" LAPTOP ".csv"
 #endif //LOAD
 
 struct timeval start_time_;
