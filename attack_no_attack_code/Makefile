@@ -2,7 +2,7 @@
 #	https://bitbucket.org/icl/papi/wiki/PAPI-Overview.md
 #	Makefiles from src/ctests directory
 
-TESTS = attack no_flushing random rowhammer_test double_sided_rowhammer attack_memset attack_ntmp
+TESTS = attack no_flushing random rowhammer_test double_sided_rowhammer attack_memset attack_ntmp stream
 
 all : $(TESTS)
 
@@ -26,6 +26,9 @@ rowhammer_test: rowhammer_test.cc
 
 double_sided_rowhammer: double_sided_rowhammer.cc
 	g++ -g -O2 -std=c++11 -I. double_sided_rowhammer.cc -o double_sided_rowhammer
+
+stream: stream.c
+	gcc -O $^ -o $@
 
 clean :
 	rm $(TESTS)
