@@ -8,6 +8,8 @@ TESTS_PAPI = attack_papi no_flushing_papi random_papi rowhammer_test4_papi rowha
 
 all : $(TESTSPERF) $(TESTS_PAPI)
 
+all_perf : $(TESTS_PERF)
+
 attack_perf : attack_perf.c
 	gcc -g -I. $^ -o $@
 
