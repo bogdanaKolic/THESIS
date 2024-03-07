@@ -3,7 +3,7 @@
 laptop="dell"
 
 # compile
-make
+make all_perf
 
 #run
 perf stat -e cpu_core/event=0x2e,umask=0x41/u,cpu_core/event=0x24,umask=0xc1/u,cpu_core/event=0xd1,umask=0x01/u,cpu_core/event=0xc2,umask=0x02,inv=1,cmask=0x01/u -I 1 -o "attack_load_dell.dat" ./attack_perf
