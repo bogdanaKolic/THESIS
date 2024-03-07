@@ -1,6 +1,6 @@
 #!/bin/bash
 
-laptop="\"lenovo\""
+laptop="\"asus\""
 load=4
 LIBPAPI="../../src/libpapi.a"
 

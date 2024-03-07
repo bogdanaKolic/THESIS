@@ -1,6 +1,6 @@
 #!/bin/bash
 
-laptop="\"lenovo\""
+laptop="\"asus\""
 LIBPAPI="../../src/libpapi.a"
 
 # compile
