@@ -156,7 +156,7 @@ int main()
 
     /* INSERT THE PROGRAM HERE */ 
     asm volatile ("start_program:");
-    for(int i=0; i< 1000; i++){
+    for(int i=0; i< 100; i++){
         hammer();
     }
     asm volatile ("end_program:\nnop");

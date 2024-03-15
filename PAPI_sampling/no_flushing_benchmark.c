@@ -19,7 +19,7 @@
 
 #define BUFFER_SIZE (1 << 18)
 #define BUFFER_SIZE_MASK (BUFFER_SIZE - 1)
-#define RH_THRESHOLD (400000)
+#define RH_THRESHOLD (10000)
 #define LF "\n"
 
 #define FLUSH(addr) asm volatile("CLFLUSH (%[a])"::[a] "r" (addr):)
@@ -152,7 +152,7 @@ int main()
     /* INSERT THE PROGRAM HERE */ 
     
     asm volatile ("start_program:");
-    for(int i=0; i< 1000; i++){
+    for(int i=0; i< 100; i++){
         hammer();
     }
     asm volatile ("end_program:\nnop");

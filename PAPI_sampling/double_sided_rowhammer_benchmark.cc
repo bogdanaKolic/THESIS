@@ -56,7 +56,7 @@ namespace {
 double fraction_of_physical_memory = 0.3;
 
 // The number of memory reads to try.
-uint64_t number_of_reads = 1000*1024;
+uint64_t number_of_reads = 100*1024;
 
 // Obtain the size of the physical memory of the system.
 uint64_t GetPhysicalMemorySize() {

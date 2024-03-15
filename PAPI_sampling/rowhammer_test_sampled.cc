@@ -35,7 +35,7 @@
 #include <sys/wait.h>
 
 const size_t mem_size = 1 << 30;
-const int toggles = 1080000;
+const int toggles = 100000;
 
 char *g_mem;
 
