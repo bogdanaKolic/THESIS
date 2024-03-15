@@ -1,0 +1,80 @@
+System:
+  Kernel: 5.15.0-56-generic x86_64 bits: 64 compiler: gcc v: 11.3.0 Desktop: Cinnamon 5.6.5
+    tk: GTK 3.24.33 wm: muffin dm: LightDM Distro: Linux Mint 21.1 Vera base: Ubuntu 22.04 jammy
+Machine:
+  Type: Laptop System: LENOVO product: 20JTS0MH0L v: ThinkPad T470s W10DG
+    serial: <superuser required> Chassis: type: 10 serial: <superuser required>
+  Mobo: LENOVO model: 20JTS0MH0L v: SDK0J40697 WIN serial: <superuser required> UEFI: LENOVO
+    v: N1WET51W (1.30 ) date: 09/14/2018
+Battery:
+  ID-1: BAT0 charge: 19.2 Wh (100.0%) condition: 19.2/23.5 Wh (81.5%) volts: 12.8 min: 11.2
+    model: SANYO 00HW022 serial: <filter> status: Full
+  ID-2: BAT1 charge: 17.4 Wh (100.0%) condition: 17.4/26.3 Wh (65.9%) volts: 12.7 min: 11.4
+    model: SANYO 01AV405 serial: <filter> status: Full
+CPU:
+  Info: dual core model: Intel Core i5-6300U bits: 64 type: MT MCP arch: Skylake rev: 3 cache:
+    L1: 128 KiB L2: 512 KiB L3: 3 MiB
+  Speed (MHz): avg: 537 high: 580 min/max: 400/3000 cores: 1: 580 2: 538 3: 532 4: 500
+    bogomips: 19999
+  Flags: avx avx2 ht lm nx pae sse sse2 sse3 sse4_1 sse4_2 ssse3 vmx
+Graphics:
+  Device-1: Intel Skylake GT2 [HD Graphics 520] vendor: Lenovo driver: i915 v: kernel ports:
+    active: eDP-1 empty: DP-1, DP-2, HDMI-A-1, HDMI-A-2 bus-ID: 00:02.0 chip-ID: 8086:1916
+  Device-2: Chicony Integrated Camera type: USB driver: uvcvideo bus-ID: 1-8:4
+    chip-ID: 04f2:b5ab
+  Display: x11 server: X.Org v: 1.21.1.3 driver: X: loaded: modesetting unloaded: fbdev,vesa
+    gpu: i915 display-ID: :0 screens: 1
+  Screen-1: 0 s-res: 1920x1080 s-dpi: 96
+  Monitor-1: eDP-1 model: LG res: 1920x1080 dpi: 158 diag: 355mm (14")
+  OpenGL: renderer: Mesa Intel HD Graphics 520 (SKL GT2) v: 4.6 Mesa 22.0.5 direct render: Yes
+Audio:
+  Device-1: Intel Sunrise Point-LP HD Audio vendor: Lenovo driver: snd_hda_intel v: kernel
+    bus-ID: 00:1f.3 chip-ID: 8086:9d70
+  Sound Server-1: ALSA v: k5.15.0-56-generic running: yes
+  Sound Server-2: PulseAudio v: 15.99.1 running: yes
+  Sound Server-3: PipeWire v: 0.3.48 running: yes
+Network:
+  Device-1: Intel Ethernet I219-LM vendor: Lenovo driver: e1000e v: kernel port: N/A
+    bus-ID: 00:1f.6 chip-ID: 8086:156f
+  IF: enp0s31f6 state: down mac: <filter>
+  Device-2: Intel Wireless 8260 driver: iwlwifi v: kernel pcie: speed: 2.5 GT/s lanes: 1
+    bus-ID: 3a:00.0 chip-ID: 8086:24f3
+  IF: wlp58s0 state: up mac: <filter>
+Bluetooth:
+  Device-1: Intel Bluetooth wireless interface type: USB driver: btusb v: 0.8 bus-ID: 1-7:3
+    chip-ID: 8087:0a2b
+  Report: hciconfig ID: hci0 rfk-id: 3 state: up address: <filter> bt-v: 2.1 lmp-v: 4.2
+    sub-v: 100
+Drives:
+  Local Storage: total: 238.47 GiB used: 36.53 GiB (15.3%)
+  ID-1: /dev/nvme0n1 vendor: Samsung model: MZVLW256HEHP-000L7 size: 238.47 GiB speed: 31.6 Gb/s
+    lanes: 4 serial: <filter> temp: 24.9 C
+Partition:
+  ID-1: / size: 233.18 GiB used: 36.52 GiB (15.7%) fs: ext4 dev: /dev/nvme0n1p2
+  ID-2: /boot/efi size: 511 MiB used: 5.2 MiB (1.0%) fs: vfat dev: /dev/nvme0n1p1
+Swap:
+  ID-1: swap-1 type: file size: 2 GiB used: 0 KiB (0.0%) priority: -2 file: /swapfile
+Sensors:
+  System Temperatures: cpu: 29.0 C pch: 31.0 C mobo: N/A
+  Fan Speeds (RPM): fan-1: 0
+Repos:
+  Packages: apt: 2144
+  No active apt repos in: /etc/apt/sources.list
+  Active apt repos in: /etc/apt/sources.list.d/google-chrome.list
+    1: deb [arch=amd64] https: //dl.google.com/linux/chrome/deb/ stable main
+  Active apt repos in: /etc/apt/sources.list.d/microsoft-prod.list
+    1: deb [arch=amd64] https: //packages.microsoft.com/ubuntu/19.04/prod disco main
+  Active apt repos in: /etc/apt/sources.list.d/mwt-desktop.list
+    1: deb [arch=amd64 signed-by=/usr/share/keyrings/mwt-desktop.gpg] https: //mirror.mwt.me/shiftkey-desktop/deb/ any main
+  Active apt repos in: /etc/apt/sources.list.d/official-package-repositories.list
+    1: deb http: //packages.linuxmint.com vera main upstream import backport
+    2: deb http: //archive.ubuntu.com/ubuntu jammy main restricted universe multiverse
+    3: deb http: //archive.ubuntu.com/ubuntu jammy-updates main restricted universe multiverse
+    4: deb http: //archive.ubuntu.com/ubuntu jammy-backports main restricted universe multiverse
+    5: deb http: //security.ubuntu.com/ubuntu/ jammy-security main restricted universe multiverse
+  Active apt repos in: /etc/apt/sources.list.d/vscode.list
+    1: deb [arch=amd64,arm64,armhf] http: //packages.microsoft.com/repos/code stable main
+Info:
+  Processes: 267 Uptime: 5h 30m Memory: 7.52 GiB used: 1.21 GiB (16.1%) Init: systemd v: 249
+  runlevel: 5 Compilers: gcc: 11.4.0 alt: 11/12 Client: Cinnamon v: 5.6.5 inxi: 3.3.13
+
