@@ -1,0 +1,55 @@
+ASUS - NO LOAD
+attack, 0.001053  sec
+attack_ntmp, 0.001488  sec
+rh4, 0.001842  sec
+rh8, 0.003809  sec
+rh9, 0.004291  sec
+rh10, 0.004785  sec
+rh20, 0.008191  sec
+double_sided, 0.000998  sec
+
+
+ASUS - LOAD 4
+attack, 0.003639  sec
+attack_ntmp, 0.005769  sec
+rh4, 0.005675  sec
+rh8, 0.009766  sec
+rh9, 0.010544  sec
+rh10, 0.011527  sec
+rh20, 0.023068  sec
+double_sided, 0.001723  sec
+
+
+ASUS - NO LOAD
+attack, 0.001148  sec
+attack_ntmp, 0.001475  sec
+rh4, 0.001934  sec
+rh8, 0.003859  sec
+rh9, 0.004399  sec
+rh10, 0.004863  sec
+rh20, 0.008195  sec
+double_sided, 0.001302  sec
+
+
+LENOVO - NO LOAD
+attack, 0.001111  sec
+attack_ntmp, 0.001422  sec
+rh4, 0.001801  sec
+rh8, 0.003725  sec
+rh9, 0.004458  sec
+rh10, 0.003907  sec
+rh20, 0.009350  sec
+double_sided, 0.001211  sec
+
+
+LENOVO - LOAD 2
+attack, 0.001647  sec
+attack_ntmp, 0.002463  sec
+rh4, 0.002672  sec
+rh8, 0.004892  sec
+rh9, 0.005858  sec
+rh10, 0.004289  sec
+rh20, 0.009121  sec
+double_sided, 0.001609  sec
+
+

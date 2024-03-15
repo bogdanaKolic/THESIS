@@ -1,6 +1,6 @@
 #!/bin/bash
 
-laptop="DELL"
+laptop="LENOVO - LOAD 2"
 
 filename="timings.txt"
 
