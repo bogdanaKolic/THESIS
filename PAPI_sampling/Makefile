@@ -79,8 +79,8 @@ double_sided_rowhammer_benchmark: double_sided_rowhammer_benchmark.cc handle_err
 stream_sampled: stream_sampled.c handle_error.o
 	gcc -g -lpthread -I. -O $^ $(LIBPAPI) -o $@
 
-stream_benchmark: stream_benchmark.c
-	gcc -O $^ -o $@
+stream_benchmark: stream_benchmark.c handle_error.o
+	gcc -g -lpthread -I. -O $^ $(LIBPAPI) -o $@
 
 clean :
 	rm $(TESTS) handle_error.o
