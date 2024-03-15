@@ -1,3 +1,8 @@
+// Modified code from 
+// https://github.com/google/rowhammer-test/tree/master
+//
+// Original author: Thomas Dullien (thomasdullien@google.com)
+
 #include <asm/unistd.h>
 #include <assert.h>
 #include <errno.h>
@@ -19,7 +24,6 @@
 #include <time.h>
 #include <unistd.h>
 #include <vector>
-#include <sys/time.h>
 
 namespace {
 
@@ -28,18 +32,6 @@ double fraction_of_physical_memory = 0.3;
 
 // The number of memory reads to try.
 uint64_t number_of_reads = 10000;
-
-/* Timer */
-
-struct timeval start_time_;
-
-double get_diff() {
-    struct timeval end_time;
-    int rc = gettimeofday(&end_time, NULL);
-    assert(rc == 0);
-    return (end_time.tv_sec - start_time_.tv_sec
-            + (double) (end_time.tv_usec - start_time_.tv_usec) / 1e6);
-  }
 
 // Obtain the size of the physical memory of the system.
 uint64_t GetPhysicalMemorySize() {
@@ -154,24 +146,9 @@ uint64_t HammerAllReachablePages(uint64_t presumed_row_size,
         std::pair<uint64_t, uint64_t> second_page_range(
             reinterpret_cast<uint64_t>(second_row_page),
             reinterpret_cast<uint64_t>(second_row_page+0x1000));
-            
-        /* Initialize the timer */
-        gettimeofday(&start_time_, NULL);
-
-        /* INSERT THE PROGRAM HERE */ 
-            for(int i=0; i<1000; i++){
-            hammer(first_page_range, second_page_range, number_of_reads);
-            }
-
-        double diff = get_diff();
-
-        /*Count the time taken*/
-
-        printf("double_sided, %lf  sec\n", diff/1000);
-
-        /* Exit successfully */
+        hammer(first_page_range, second_page_range, number_of_reads);
         exit(0);
-        }
+      }
     }
   }
   return total_bitflips;
@@ -188,10 +165,7 @@ void HammerAllReachableRows(HammerFunction* hammer, uint64_t number_of_reads) {
 
 }  // namespace
 
-int main()
-{
-    HammerAllReachableRows(&HammerAddressesStandard, number_of_reads);
+int main(int argc, char** argv) {
 
-    exit(0);
+  HammerAllReachableRows(&HammerAddressesStandard, number_of_reads);
 }
-

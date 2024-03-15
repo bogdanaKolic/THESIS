@@ -2,8 +2,6 @@
 #include <stdint.h>
 #include <stdlib.h>
 #include <string.h>
-#include <assert.h>
-#include <sys/time.h>
 
 #define BUFFER_SIZE (1 << 18)
 #define BUFFER_SIZE_MASK (BUFFER_SIZE - 1)
@@ -11,7 +9,6 @@
 #define LF "\n"
 
 #define FLUSH(addr) asm volatile("CLFLUSH (%[a])"::[a] "r" (addr):)
-
 
 
 void attack(const uint32_t nb_loops, const uintptr_t addr1, const uintptr_t addr2)
@@ -66,36 +63,10 @@ void hammer() {
                                             vict.column, *((int*)vict.addr)); */
 }
 
-struct timeval start_time_;
+int main() {
 
-double get_diff() {
-    struct timeval end_time;
-    int rc = gettimeofday(&end_time, NULL);
-    assert(rc == 0);
-    return (end_time.tv_sec - start_time_.tv_sec
-            + (double) (end_time.tv_usec - start_time_.tv_usec) / 1e6);
-  }
-
-int main()
-{
-
-    /* Initialize the timer */
-    gettimeofday(&start_time_, NULL);
-
-    /* INSERT THE PROGRAM HERE */ 
-    asm volatile ("start_program:");
-    for(int i=0; i< 1000; i++){
-        hammer();
-    }
-    asm volatile ("end_program:\nnop");
-    
-    double diff = get_diff();
-
-    /*Count the time taken*/
-
-    printf("attack_ntmp, %lf  sec\n", diff/1000);
-
-    /* Exit successfully */
-    exit(0);
+  asm volatile ("start_program:");
+    hammer();
+  asm volatile ("end_program:\nnop");
+  return 0;
 }
-

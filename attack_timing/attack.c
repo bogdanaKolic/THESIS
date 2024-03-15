@@ -60,7 +60,7 @@ void hammer() {
                                             vict.column, *((int*)vict.addr)); */
 
   FLUSH(vict.addr);
-  attack((RH_THRESHOLD+1)/2, agg1.addr, agg2.addr);
+  attack(RH_THRESHOLD, agg1.addr, agg2.addr);
   FLUSH(vict.addr);
   /* printf("vict:%xh[%d|%d|%xh|%xh] = %08Xh", vict.addr, vict.bank_group, vict.bank, vict.row,
                                             vict.column, *((int*)vict.addr)); */

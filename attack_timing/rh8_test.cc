@@ -10,7 +10,7 @@
 #include <sys/time.h>
 
 const size_t mem_size = 1 << 30;
-const int toggles = 1080000;
+const int toggles = 10000;
 
 char *g_mem;
 
@@ -67,7 +67,7 @@ double get_diff() {
     gettimeofday(&start_time_, NULL);
 
 
-  toggle(5, 8); //iterations, addr_count
+  toggle(1000, 8); //iterations, addr_count
 
   double diff = get_diff();
 

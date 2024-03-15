@@ -1,3 +1,6 @@
+// Modified code from 
+// https://github.com/google/rowhammer-test/tree/master
+
 #include <assert.h>
 #include <inttypes.h>
 #include <stdint.h>
@@ -7,13 +10,11 @@
 #include <sys/mman.h>
 #include <sys/wait.h>
 #include <unistd.h>
-#include <sys/time.h>
 
 const size_t mem_size = 1 << 30;
 const int toggles = 10000;
 
 char *g_mem;
-
 
 char *pick_addr() {
   size_t offset = (rand() << 12) % mem_size;
@@ -44,16 +45,6 @@ static void toggle(int iterations, int addr_count) {
 
 }
 
-struct timeval start_time_;
-
-double get_diff() {
-    struct timeval end_time;
-    int rc = gettimeofday(&end_time, NULL);
-    assert(rc == 0);
-    return (end_time.tv_sec - start_time_.tv_sec
-            + (double) (end_time.tv_usec - start_time_.tv_usec) / 1e6);
-  }
-
   void main_prog() {
   g_mem = (char *) mmap(NULL, mem_size, PROT_READ | PROT_WRITE,
                         MAP_ANON | MAP_PRIVATE, -1, 0);
@@ -61,31 +52,10 @@ double get_diff() {
 
   memset(g_mem, 0xff, mem_size);
 
-
-  
-    /* Initialize the timer */
-    gettimeofday(&start_time_, NULL);
-
-
-  toggle(1000, 10); //iterations, addr_count
-
-  double diff = get_diff();
-
-    /*Count the time taken*/
-
-    printf("rh10, %lf  sec\n", diff/1000);
-
+  toggle(1, 8); //iterations, addr_count
 }
 
-int main()
-{
-
-    /* INSERT THE PROGRAM HERE */ 
-    
-    main_prog();
-
-
-    /* Exit successfully */
-    exit(0);
+int main() {
+  main_prog();
+  return 0;
 }
-
