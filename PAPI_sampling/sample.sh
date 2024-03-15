@@ -1,6 +1,6 @@
 #!/bin/sh
 
-NUM_RUNS=20
+NUM_RUNS=50
 
 sudo make
 
