@@ -1,6 +1,6 @@
 #!/bin/bash
 
-laptop="ASUS - NO LOAD"
+laptop="LENOVO - LOAD 2"
 
 filename="timings.txt"
 

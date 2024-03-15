@@ -31,3 +31,25 @@ rh20, 0.008195  sec
 double_sided, 0.001302  sec
 
 
+LENOVO - NO LOAD
+attack, 0.001111  sec
+attack_ntmp, 0.001422  sec
+rh4, 0.001801  sec
+rh8, 0.003725  sec
+rh9, 0.004458  sec
+rh10, 0.003907  sec
+rh20, 0.009350  sec
+double_sided, 0.001211  sec
+
+
+LENOVO - LOAD 2
+attack, 0.001647  sec
+attack_ntmp, 0.002463  sec
+rh4, 0.002672  sec
+rh8, 0.004892  sec
+rh9, 0.005858  sec
+rh10, 0.004289  sec
+rh20, 0.009121  sec
+double_sided, 0.001609  sec
+
+
