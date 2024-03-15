@@ -24,12 +24,16 @@ for f in files:
             label = 'no_attack'
         else:
             label = 'attack'
+        if f == 'no_flushing':
+            file = 'no_flush'
+        else:
+            file = f
         with open(f'{f}_dell_processed.csv', 'w') as outfile:
             sorted_list = sorted(list(events.items()))
             for line in sorted_list:
                 if len(line[1]) != 4:
                     continue
-                outfile.write(f'dell, 0, {f}, {line[0]}, {line[1][0]}, {line[1][1]}, {line[1][2]}, {line [1][3]}, {label}\n') 
+                outfile.write(f'dell, 0, {file}, {line[0]}, {line[1][0]}, {line[1][1]}, {line[1][2]}, {line [1][3]}, {label}\n') 
                 
 for f in files:
     with open(f'{f}_load_dell.dat', 'r') as file:
@@ -51,9 +55,13 @@ for f in files:
             label = 'no_attack'
         else:
             label = 'attack'
+        if f == 'no_flushing':
+            file = 'no_flush'
+        else:
+            file = f
         with open(f'{f}_load_dell_processed.csv', 'w') as outfile:
             sorted_list = sorted(list(events.items()))
             for line in sorted_list:
                 if len(line[1]) != 4:
                     continue
-                outfile.write(f'dell, 8, {f}, {line[0]}, {line[1][0]}, {line[1][1]}, {line[1][2]}, {line [1][3]}, {label}\n') 
+                outfile.write(f'dell, 8, {file}, {line[0]}, {line[1][0]}, {line[1][1]}, {line[1][2]}, {line [1][3]}, {label}\n') 

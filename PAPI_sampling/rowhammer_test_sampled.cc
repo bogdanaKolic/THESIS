@@ -127,10 +127,7 @@ void main_prog() {
       handle_error(1);
   }
 
-  int iter = 0;
-  for (int i=0; i<2;i++) {
-    toggle(2, 4); //iterations, addr_count
-  }
+  toggle(5, 4); //iterations, addr_count
 
 
   /* Stop all counters */

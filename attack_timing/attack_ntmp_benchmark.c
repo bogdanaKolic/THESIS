@@ -39,12 +39,20 @@ long_long values[3];
 
 void attack(const uint32_t nb_loops, const uintptr_t addr1, const uintptr_t addr2)
 {
-    for(int i=0; i< nb_loops; i++){
-        memset(addr1, -1, 256);
-        *(volatile char *)addr1;
-        memset(addr2, -1, 256);
-        *(volatile char *)addr2;
-    }
+    asm volatile(
+        "MOV %[nb_loops], %%ecx  \n"
+        "JMP hammer_loop_asm     \n"
+        "hammer_loop_asm:        \n"
+        "  MOVNTI %%eax, (%[addr1]) \n"
+        "  MOVNTI %%eax, (%[addr2]) \n"
+        "  MOV (%[addr1]), %%edx \n"
+        "  MOV (%[addr2]), %%edx \n"
+	      "  LOOP hammer_loop_asm  \n"
+        :: [nb_loops] "r" (nb_loops),
+	   [addr1] "r" (addr1),
+           [addr2] "r" (addr2)
+        : "%eax", "%ecx", "%edx", "memory"
+        );
 
 }
 
@@ -157,7 +165,7 @@ int main()
     if (PAPI_stop(EventSet, values) != PAPI_OK)
         handle_error(1);
 
-    printf("attack_memset_benchmark, %lld, %lld, %lld\n", values[0], values[1], values[2]);
+    printf("attack_ntmp_benchmark, %lld, %lld, %lld\n", values[0], values[1], values[2]);
 
     /* Exit successfully */
     exit(0);

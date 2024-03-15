@@ -1,0 +1,89 @@
+System:
+  Kernel: 5.15.0-76-generic x86_64 bits: 64 compiler: gcc v: 11.3.0 Desktop: Cinnamon 5.8.4
+    tk: GTK 3.24.33 wm: muffin dm: LightDM Distro: Linux Mint 21.2 Victoria base: Ubuntu 22.04 jammy
+Machine:
+  Type: Laptop System: Dell product: Precision 3571 v: N/A serial: <superuser required> Chassis:
+    type: 10 serial: <superuser required>
+  Mobo: Dell model: 07K1M2 v: A00 serial: <superuser required> UEFI: Dell v: 1.13.0
+    date: 03/10/2023
+Battery:
+  ID-1: BAT0 charge: 92.1 Wh (100.0%) condition: 92.1/97.0 Wh (94.9%) volts: 12.7 min: 11.4
+    model: BYD DELL 53XP728 serial: <filter> status: Full
+CPU:
+  Info: 14-core (6-mt/8-st) model: 12th Gen Intel Core i7-12700H bits: 64 type: MST AMCP
+    arch: Alder Lake rev: 3 cache: L1: 1.2 MiB L2: 11.5 MiB L3: 24 MiB
+  Speed (MHz): avg: 730 high: 1142 min/max: 400/4600:4700:3500 cores: 1: 553 2: 807 3: 1036
+    4: 975 5: 691 6: 791 7: 498 8: 856 9: 884 10: 1142 11: 662 12: 524 13: 769 14: 714 15: 775
+    16: 699 17: 459 18: 638 19: 488 20: 656 bogomips: 107520
+  Flags: avx avx2 ht lm nx pae sse sse2 sse3 sse4_1 sse4_2 ssse3 vmx
+Graphics:
+  Device-1: Intel Alder Lake-P Integrated Graphics vendor: Dell driver: i915 v: kernel ports:
+    active: DP-5,eDP-1 empty: DP-1, DP-2, DP-3, DP-4, HDMI-A-1 bus-ID: 0000:00:02.0
+    chip-ID: 8086:4626
+  Device-2: NVIDIA vendor: Dell driver: nouveau v: kernel bus-ID: 0000:01:00.0
+    chip-ID: 10de:1fb6
+  Device-3: Sunplus Innovation Integrated_Webcam_FHD type: USB driver: uvcvideo bus-ID: 3-6:2
+    chip-ID: 1bcf:2ba5
+  Display: x11 server: X.Org v: 1.21.1.4 driver: X: loaded: modesetting unloaded: fbdev,vesa
+    gpu: i915 display-ID: :0 screens: 1
+  Screen-1: 0 s-res: 3600x1168 s-dpi: 96
+  Monitor-1: DP-1-3 pos: bottom-r res: 1680x1050 dpi: 90 diag: 559mm (22")
+  Monitor-2: eDP-1 pos: primary,top-left model: LG res: 1920x1080 dpi: 142 diag: 395mm (15.5")
+  OpenGL: renderer: Mesa Intel Graphics (ADL GT2) v: 4.6 Mesa 22.2.5 direct render: Yes
+Audio:
+  Device-1: Intel Alder Lake PCH-P High Definition Audio vendor: Dell driver: snd_hda_intel
+    v: kernel bus-ID: 0000:00:1f.3 chip-ID: 8086:51c8
+  Device-2: Realtek USB Audio type: USB driver: snd-usb-audio bus-ID: 3-1.5:11
+    chip-ID: 0bda:4014
+  Sound Server-1: ALSA v: k5.15.0-76-generic running: yes
+  Sound Server-2: PulseAudio v: 15.99.1 running: yes
+  Sound Server-3: PipeWire v: 0.3.48 running: yes
+Network:
+  Device-1: Intel Alder Lake-P PCH CNVi WiFi driver: iwlwifi v: kernel bus-ID: 0000:00:14.3
+    chip-ID: 8086:51f0
+  IF: wlp0s20f3 state: up mac: <filter>
+  Device-2: Intel Ethernet I219-LM vendor: Dell driver: e1000e v: kernel port: N/A
+    bus-ID: 0000:00:1f.6 chip-ID: 8086:1a1e
+  IF: enp0s31f6 state: down mac: <filter>
+  Device-3: Realtek RTL8153 Gigabit Ethernet Adapter type: USB driver: r8152 bus-ID: 2-1.2:4
+    chip-ID: 0bda:8153
+  IF: enxc84bd6656a74 state: up speed: 1000 Mbps duplex: full mac: <filter>
+Bluetooth:
+  Device-1: Intel type: USB driver: btusb v: 0.8 bus-ID: 3-10:3 chip-ID: 8087:0033
+  Report: hciconfig ID: hci0 rfk-id: 0 state: up address: <filter>
+RAID:
+  Hardware-1: Intel Volume Management Device NVMe RAID Controller driver: vmd v: 0.6
+    bus-ID: 0000:00:0e.0 chip-ID: 8086:467f
+Drives:
+  Local Storage: total: 476.94 GiB used: 48.6 GiB (10.2%)
+  ID-1: /dev/nvme0n1 vendor: KIOXIA model: KBG50ZNS512G NVMe 512GB size: 476.94 GiB
+    speed: 63.2 Gb/s lanes: 4 serial: <filter> temp: 42.9 C
+Partition:
+  ID-1: / size: 467.89 GiB used: 48.59 GiB (10.4%) fs: ext4 dev: /dev/nvme0n1p2
+  ID-2: /boot/efi size: 511 MiB used: 6.1 MiB (1.2%) fs: vfat dev: /dev/nvme0n1p1
+Swap:
+  ID-1: swap-1 type: file size: 2 GiB used: 15.2 MiB (0.7%) priority: -2 file: /swapfile
+Sensors:
+  System Temperatures: cpu: 49.0 C mobo: N/A gpu: nouveau temp: 48.0 C
+  Fan Speeds (RPM): N/A
+Repos:
+  Packages: apt: 2159
+  No active apt repos in: /etc/apt/sources.list
+  Active apt repos in: /etc/apt/sources.list.d/mwt-desktop.list
+    1: deb [arch=amd64 signed-by=/usr/share/keyrings/mwt-desktop.gpg] https: //mirror.mwt.me/shiftkey-desktop/deb/ any main
+  Active apt repos in: /etc/apt/sources.list.d/official-package-repositories.list
+    1: deb http: //packages.linuxmint.com victoria main upstream import backport
+    2: deb http: //archive.ubuntu.com/ubuntu jammy main restricted universe multiverse
+    3: deb http: //archive.ubuntu.com/ubuntu jammy-updates main restricted universe multiverse
+    4: deb http: //archive.ubuntu.com/ubuntu jammy-backports main restricted universe multiverse
+    5: deb http: //security.ubuntu.com/ubuntu/ jammy-security main restricted universe multiverse
+  Active apt repos in: /etc/apt/sources.list.d/oneAPI.list
+    1: deb https: //apt.repos.intel.com/oneapi all main
+  Active apt repos in: /etc/apt/sources.list.d/shiftkey-packages.list
+    1: deb [arch=amd64 signed-by=/usr/share/keyrings/shiftkey-packages.gpg] https: //apt.packages.shiftkey.dev/ubuntu/ any main
+  Active apt repos in: /etc/apt/sources.list.d/vscode.list
+    1: deb [arch=amd64,arm64,armhf] http: //packages.microsoft.com/repos/code stable main
+Info:
+  Processes: 445 Uptime: 17h 8m Memory: 15.31 GiB used: 10.36 GiB (67.7%) Init: systemd v: 249
+  runlevel: 5 Compilers: gcc: 11.4.0 alt: 11/12 Client: Cinnamon v: 5.8.4 inxi: 3.3.13
+

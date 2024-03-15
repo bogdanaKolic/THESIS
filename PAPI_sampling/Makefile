@@ -3,7 +3,7 @@
 #	Makefiles from src/ctests directory
 
 LIBPAPI = ../../src/libpapi.a
-TESTS = add_native timer_interrupt total_count_benchmark timer_stop_interrupt timer_thread timer_thread_sigblock total_count_overflow_benchmark sampling_overflow attack_sampled attack_benchmark no_flushing_sampled no_flushing_benchmark random_sampled random_benchmark rowhammer_test_sampled rowhammer_test_benchmark double_sided_rowhammer_sampled double_sided_rowhammer_benchmark attack_memset_sampled attack_memset_benchmark attack_ntmp_sampled attack_ntmp_benchmark
+TESTS = add_native timer_interrupt total_count_benchmark timer_stop_interrupt timer_thread timer_thread_sigblock total_count_overflow_benchmark sampling_overflow attack_sampled attack_benchmark no_flushing_sampled no_flushing_benchmark random_sampled random_benchmark rowhammer_test_sampled rowhammer_test_benchmark double_sided_rowhammer_sampled double_sided_rowhammer_benchmark attack_ntmp_sampled attack_ntmp_benchmark stream_sampled stream_benchmark
 
 all : $(TESTS)
 
@@ -75,6 +75,12 @@ rowhammer_test_benchmark: rowhammer_test_benchmark.cc handle_error.o
 
 double_sided_rowhammer_benchmark: double_sided_rowhammer_benchmark.cc handle_error.o
 	g++ -g -O2 -std=c++11 -I. double_sided_rowhammer_benchmark.cc $(LIBPAPI) -o double_sided_rowhammer_benchmark
+
+stream_sampled: stream_sampled.c handle_error.o
+	gcc -g -lpthread -I. -O $^ $(LIBPAPI) -o $@
+
+stream_benchmark: stream_benchmark.c
+	gcc -O $^ -o $@
 
 clean :
 	rm $(TESTS) handle_error.o
