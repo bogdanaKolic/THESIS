@@ -1,16 +1,3 @@
-/* A program that serves as a benchmark for computing the
-* total number of event occurences without periodic readings.
-*
-**********************************************************
-* Resources:
-*   https://stackoverflow.com/a/65571169 
-*   https://linux.die.net/man/2/setitimer 
-*   https://bitbucket.org/icl/papi/wiki/PAPI-Overview.md
-*   https://linux.die.net/man/3/papi_event_code_to_name 
-*   https://icl.utk.edu/projects/papi/files/documentation/PAPI_USER_GUIDE_23.htm#WHAT_IS_MULTIPLEXING 
-*   https://www.mankier.com/3/PAPI_set_multiplex */
-
-
 #include <asm/unistd.h>
 #include <assert.h>
 #include <errno.h>
@@ -32,23 +19,7 @@
 #include <time.h>
 #include <unistd.h>
 #include <vector>
-#include <papi.h>
-
-#define INSTR "INST_RETIRED:ANY"
-#define INSTR_LENOVO "INST_RETIRED:ANY_P"
-#define MEMINSTR "MEM_INST_RETIRED:ANY"
-#define L1DRA "PERF_COUNT_HW_CACHE_L1D:READ:ACCESS"
-
-void handle_error (int retval)
-{
-     printf("PAPI error %d: %s\n", retval, PAPI_strerror(retval));
-     exit(1);
-}
-
-int retval = 0;
-int EventSet = PAPI_NULL;
-int native = 0;
-long_long values[3];
+#include <sys/time.h>
 
 namespace {
 
@@ -57,6 +28,18 @@ double fraction_of_physical_memory = 0.3;
 
 // The number of memory reads to try.
 uint64_t number_of_reads = 1000*1024;
+
+/* Timer */
+
+struct timeval start_time_;
+
+double get_diff() {
+    struct timeval end_time;
+    int rc = gettimeofday(&end_time, NULL);
+    assert(rc == 0);
+    return (end_time.tv_sec - start_time_.tv_sec
+            + (double) (end_time.tv_usec - start_time_.tv_usec) / 1e6);
+  }
 
 // Obtain the size of the physical memory of the system.
 uint64_t GetPhysicalMemorySize() {
@@ -172,21 +155,19 @@ uint64_t HammerAllReachablePages(uint64_t presumed_row_size,
             reinterpret_cast<uint64_t>(second_row_page),
             reinterpret_cast<uint64_t>(second_row_page+0x1000));
             
-        /* Start counting */
-        if (PAPI_start(EventSet) != PAPI_OK){
-            printf("start error");
-            handle_error(1);
-        }
+        /* Initialize the timer */
+        gettimeofday(&start_time_, NULL);
 
         /* INSERT THE PROGRAM HERE */ 
             for(int i=0; i<2; i++){
             hammer(first_page_range, second_page_range, number_of_reads);
             }
 
-        if (PAPI_stop(EventSet, values) != PAPI_OK)
-            handle_error(1);
+        double diff = get_diff();
 
-        printf("double_sided_benchmark, %lld, %lld, %lld\n", values[0], values[1], values[2]);
+        /*Count the time taken*/
+
+        printf("double_sided, %lf  sec\n", diff/1000);
 
         /* Exit successfully */
         exit(0);
@@ -209,63 +190,6 @@ void HammerAllReachableRows(HammerFunction* hammer, uint64_t number_of_reads) {
 
 int main()
 {
-
-    /* Initialize the library */
-    retval = PAPI_library_init(PAPI_VER_CURRENT);
-    if (retval != PAPI_VER_CURRENT) {
-        printf("PAPI library init error!\n");
-        exit(1);
-    }
-
-    /* Create an EventSet */
-    retval = PAPI_create_eventset(&EventSet);
-    if (retval != PAPI_OK){
-     printf("create_eventset error");
-     handle_error(retval);
-    }
-    
-    /* Find the code for the native event */
-    retval = PAPI_event_name_to_code(INSTR, &native);
-    if (retval != PAPI_OK){
-        printf("event error");
-        handle_error(retval);
-    }
-
-    /* Add it to the eventset */
-    retval = PAPI_add_event(EventSet, native);
-    if (retval != PAPI_OK){
-        printf("add event error");
-        handle_error(retval);
-    }
-
-    /* Find the code for the native event */
-    retval = PAPI_event_name_to_code(MEMINSTR, &native);
-    if (retval != PAPI_OK){
-        printf("event error");
-        handle_error(retval);
-    }
-
-    /* Add it to the eventset */
-    retval = PAPI_add_event(EventSet, native);
-    if (retval != PAPI_OK){
-        printf("add event error");
-        handle_error(retval);
-    }
-
-    /* Find the code for the native event */
-    retval = PAPI_event_name_to_code(L1DRA, &native);
-    if (retval != PAPI_OK){
-        printf("event error");
-        handle_error(retval);
-    }
-
-    /* Add it to the eventset */
-    retval = PAPI_add_event(EventSet, native);
-    if (retval != PAPI_OK){
-        printf("add event error");
-        handle_error(retval);
-    }
-
     HammerAllReachableRows(&HammerAddressesStandard, number_of_reads);
 
     exit(0);
