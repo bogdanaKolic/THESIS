@@ -5,7 +5,7 @@ set style line 2 lt 1 lw 2 pt 7 ps 1.5 lc 'green'
 set style line 3 lt 1 lw 2 pt 7 ps 1.5 lc 'blue'
 set style data linespoints
 
-set xlabel 'sample number'
+set xlabel 'sample index in the data set'
 set ylabel 'event count'
 
 ****************************************************************************************************************************************************

@@ -1,4 +1,4 @@
-Code in this folder serves the purpose of generating the data sets that are used for training and testing are machine learning models.<br>
+The code in this folder serves the purpose of generating the data sets that are used for training and testing our machine learning models.<br>
 This can either be done manually or by using the appropriate script. The scripts for data generation with load do not introduce load themselves (this should still be done manually), 
 but the amount of load should be specified by altering the `load` field. Before a run, the field `laptop` should also be modified according to the machine.
 The Makefile is also provided. <br>

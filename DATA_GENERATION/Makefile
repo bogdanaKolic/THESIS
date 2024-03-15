@@ -4,7 +4,7 @@
 
 TESTS_PERF = attack_perf no_flushing_perf random_perf rowhammer_test4_perf rowhammer_test8_perf rowhammer_test9_perf rowhammer_test10_perf rowhammer_test20_perf double_sided_rowhammer_perf attack_ntmp_perf stream_perf
 LIBPAPI = ../../src/libpapi.a
-TESTS_PAPI = attack_papi no_flushing_papi random_papi rowhammer_test4_papi rowhammer_test8_papi rowhammer_test9_papi rowhammer_test10_papi rowhammer_test20_papi double_sided_rowhammer_papi attack_memset_papi attack_ntmp_papi stream_papi
+TESTS_PAPI = attack_papi no_flushing_papi random_papi rowhammer_test4_papi rowhammer_test8_papi rowhammer_test9_papi rowhammer_test10_papi rowhammer_test20_papi double_sided_rowhammer_papi attack_ntmp_papi stream_papi
 
 all : $(TESTSPERF) $(TESTS_PAPI)
 
