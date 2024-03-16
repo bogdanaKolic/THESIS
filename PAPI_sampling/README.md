@@ -125,8 +125,6 @@ Files in this directory represent attempts to obtain accurate periodic readings 
 
 ### Results and conclusions
 
-The `<test_name>.txt` files contain the results obtained by running the respective tests.
-
 #### Overflow sampling
 
 - 11th Gen Intel© Core™ i5-1135G7 @ 2.40GHz × 4 processor >> the number of cycles?
