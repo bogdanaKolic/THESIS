@@ -1,7 +1,6 @@
 # Hardware Performance Counters, the PAPI library and Sampling
 
 Files in this directory represent attempts to obtain accurate periodic readings from the HPCs using functions from the ***PAPI*** library.<br>
-Running the command `sudo sh -c "echo 2 > /proc/sys/kernel/perf_event_paranoid"` might be necessary for using *PAPI*
 
 ## Code used for sampling
 
