@@ -1,11 +1,11 @@
 This repository contains all the code and data related to my Bachelor Thesis: *Vulnerability Assessment for Rowhammer Attack*.
 
-This project deals with several topics:
+## This project deals with several topics:
 - precise and accurate sampling of programs for obtaining their hardware event traces
 - simulation of the RH attack on three different systems and gathering their traces
 - training and testing ML models for classifying the attack code based on its traces
 
-The repository contains several folders:
+## The repository contains several folders:
 - **PAPI_sampling** was used in the development of the method for periodic sampling of the code and reading its traces from the HPCs using PAPI; it is connected to the first part of the project. 
 - **DATA_GENERATION** contains PAPI-instrumented code for generating data sets that are used for training and testing our ML models, as well as the code that is to be sampled with perf for the same purpose
 - **benchmarks** contains the STREAM benchmark code; it is used fro creating LOAD condition on our systems
@@ -15,15 +15,13 @@ The repository contains several folders:
 
 More details can be found in the report.
 
-Instructions:
+## Instructions:
 
 To use the code from this repository, the PAPI library should be installed first (if possible, on a machine with a Skylake or a Tiger Lake processor, otherwise the native event names might need to be adjusted in the code).
 This can be done by cloning the [PAPI repository](https://github.com/icl-utk-edu/papi) and following the installation instructions.
 After the successful installation, this repository should be cloned in the root folder(named *papi*) of the PAPI repository.
 
-Resources:
-
-Licenses:
+## Licenses:
 The code from the [***google/rowhammer-test***](https://github.com/google/rowhammer-test) repository that it used in this work (with modifications) comes with the following license:
 
 
