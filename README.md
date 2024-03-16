@@ -20,6 +20,7 @@ More details can be found in the report.
 To use the code from this repository, the PAPI library should be installed first (if possible, on a machine with a Skylake or a Tiger Lake processor, otherwise the native event names might need to be adjusted in the code).
 This can be done by cloning the [PAPI repository](https://github.com/icl-utk-edu/papi) and following the installation instructions.
 After the successful installation, this repository should be cloned in the root folder(named *papi*) of the PAPI repository.
+Running the command `sudo sh -c "echo 2 > /proc/sys/kernel/perf_event_paranoid"` might be necessary for using *PAPI* and accessing the counters without root privileges.
 
 ## Licenses:
 The code from the [***google/rowhammer-test***](https://github.com/google/rowhammer-test) repository that it used in this work (with modifications) comes with the following license:
