@@ -24,7 +24,7 @@ After the successful installation, this repository should be cloned in the root 
 Resources:
 
 Licenses:
-The code from the [***google/rowhammer-test***](https://github.com/google/rowhammer-test) repository comes with the following license:
+The code from the [***google/rowhammer-test***](https://github.com/google/rowhammer-test) repository that it used in this work (with modifications) comes with the following license:
 
 
                                  Apache License
