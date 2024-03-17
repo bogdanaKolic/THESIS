@@ -1,3 +1,6 @@
+/* original code received from Loïc France
+* the  attack loop modified according to http://seclab.cs.sunysb.edu/seclab/pubs/host16.pdf */
+
 #include <stdio.h>
 #include <stdint.h>
 #include <stdlib.h>
