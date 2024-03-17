@@ -4,9 +4,9 @@ but the amount of load should be specified by altering the `load` field. Before 
 The Makefile is also provided. <br>
 A file *code_type_papi.c* is used for sampling with PAPI on ASUS and LENOVO machines, and *code_type_perf.c* for sampling with perf on DELL machine.<br>
 ### The code for the attack comes in several variants:
-  - `attack` is the code obtained from the authors of [Vulnerability Assessment
+  - `attack` is a slightly the code obtained from the authors of [Vulnerability Assessment
 of the Rowhammer Attack Using Machine Learning and the gem5 Simulator -Work in Progress](https://hal.umontpellier.fr/hal-03196090)
-  - `attack_ntmp` modifies the hammerinf function from `attack` to use non-temporal **MOVNTI** instruction 
+  - `attack_ntmp` modifies the hammering function from `attack` to use non-temporal **MOVNTI** instruction as explained in [A New Approach for Rowhammer Attacks](http://seclab.cs.sunysb.edu/seclab/pubs/host16.pdf)
   - `rowhammer-test` is simplified code from [google/rowhammer-test](https://github.com/google/rowhammer-test) and the number next to its name signifies how many aggressor rows are used for hammering
   - `double-sided-rowhammer` is the double-sided version of the attack from the [same repository](https://github.com/google/rowhammer-test)
 
