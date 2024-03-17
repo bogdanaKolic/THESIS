@@ -1,3 +1,9 @@
+// Modified code from 
+// https://github.com/google/rowhammer-test/tree/master
+//
+// Original author: Thomas Dullien (thomasdullien@google.com)
+
+
 #include <asm/unistd.h>
 #include <assert.h>
 #include <errno.h>

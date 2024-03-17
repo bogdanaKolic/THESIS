@@ -1,3 +1,6 @@
+// Modified code from 
+// https://github.com/google/rowhammer-test/tree/master
+
 #include <assert.h>
 #include <inttypes.h>
 #include <stdint.h>

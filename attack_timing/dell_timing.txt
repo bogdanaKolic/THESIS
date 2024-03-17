@@ -63,8 +63,10 @@ user	0m0,092s
 sys	0m0,810s
 double_sided_rowhammer_perf:
 Killed
-real	0m3,603s
-user	0m0,000s
-sys	0m3,455s
+
+real	0m5,713s
+user	0m0,005s
+sys	0m5,476s
+
 
 
