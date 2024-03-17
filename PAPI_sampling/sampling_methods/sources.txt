@@ -26,6 +26,7 @@ https://stackoverflow.com/questions/47287644/profiling-cache-misses-for-separate
 https://stackoverflow.com/questions/16037146/timer-interrupt-in-c
 https://www.gnu.org/software/libc/manual/html_node/Signal-Sets.html
 https://www.gnu.org/software/libc/manual/html_node/Setting-an-Alarm.html
+https://github.com/google/rowhammer-test for the function get_diff()
 
 Periodic timer overcount:
 https://icl.utk.edu/files/publications/2010/icl-utk-451-2010.pdf

@@ -2,13 +2,8 @@
 * total number of event occurences without periodic readings.
 *
 **********************************************************
-* Resources:
-*   https://stackoverflow.com/a/65571169 
-*   https://linux.die.net/man/2/setitimer 
-*   https://bitbucket.org/icl/papi/wiki/PAPI-Overview.md
-*   https://linux.die.net/man/3/papi_event_code_to_name 
-*   https://icl.utk.edu/projects/papi/files/documentation/PAPI_USER_GUIDE_23.htm#WHAT_IS_MULTIPLEXING 
-*   https://www.mankier.com/3/PAPI_set_multiplex */
+* Modified code from 
+* https://github.com/google/rowhammer-test/tree/master */
 
 
 #include <papi.h>

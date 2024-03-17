@@ -1,3 +1,8 @@
+# Used as resources:
+#	https://bitbucket.org/icl/papi/wiki/PAPI-Overview.md
+#	Makefiles from src/ctests directory
+#	make.sh from the rowhammer-test repository
+
 TESTS = attack rh4_test rh8_test rh9_test rh10_test rh20_test double_sided_rowhammer attack_ntmp
 TESTS_PERF = attack_perf rowhammer_test4_perf rowhammer_test8_perf rowhammer_test9_perf rowhammer_test10_perf rowhammer_test20_perf double_sided_rowhammer_perf attack_ntmp_perf
 

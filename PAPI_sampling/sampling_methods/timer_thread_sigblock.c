@@ -9,7 +9,7 @@
 *   https://stackoverflow.com/a/65571169 
 *   https://linux.die.net/man/2/setitimer 
 *   https://stackoverflow.com/questions/47287644/profiling-cache-misses-for-separate-pthread-using-papi 
-*   https://github.com/google/rowhammer-test 
+*   https://github.com/google/rowhammer-test for the get_diff() function
 *   https://linux.die.net/man/3/papi_attach
 *   https://stackoverflow.com/questions/20728773/multithreaded-server-signal-handling-posix/20728819#20728819
 *   https://pubs.opengroup.org/onlinepubs/9699919799/functions/pthread_sigmask.html

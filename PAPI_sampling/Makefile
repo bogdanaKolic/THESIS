@@ -1,6 +1,7 @@
 # Used as resources:
 #	https://bitbucket.org/icl/papi/wiki/PAPI-Overview.md
 #	Makefiles from src/ctests directory
+#	make.sh from the rowhammer-test repository
 
 LIBPAPI = ../../src/libpapi.a
 TESTS = total_count_benchmark timer_thread_sigblock attack_sampled attack_benchmark no_flushing_sampled no_flushing_benchmark random_sampled random_benchmark rowhammer_test_sampled rowhammer_test_benchmark double_sided_rowhammer_sampled double_sided_rowhammer_benchmark attack_ntmp_sampled attack_ntmp_benchmark stream_sampled stream_benchmark

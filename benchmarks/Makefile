@@ -1,3 +1,5 @@
+# as instructed at https://www.cs.virginia.edu/stream/ref.html
+
 OBJS=stream
 
 all: $(OBJS)
